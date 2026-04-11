@@ -1,0 +1,83 @@
+/* Doto Gallery */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    text-align: center;
+    background-image: url("background.png");
+}
+
+header {
+    background-color: #585bd7;
+    color: white;
+    padding: 20px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/* Carousel Container */
+.carousel {
+    width: 100%;
+    margin: 40px auto;
+    padding: 20px 0;
+    overflow: hidden;
+}
+
+/* Carousel Track */
+.carousel-track {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    width: max-content;
+    animation: scroll 20s linear infinite;
+}
+
+/* Carousel Images */
+.carousel img {
+    height: 650px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/* Hover Effects */
+.carousel img:hover {
+    transform: scale(1.05);
+}
+
+.carousel:hover .carousel-track {
+    animation-play-state: paused;
+}
+
+/* Scroll Animation */
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Back Button */
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    color: #4a5568;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
